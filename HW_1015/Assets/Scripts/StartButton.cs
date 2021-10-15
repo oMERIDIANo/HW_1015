@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class PickupAmmo : MonoBehaviour
+public class StartButton : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,12 +18,8 @@ public class PickupAmmo : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void Level1Button()
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-            GameManager.instance.Ammo_Count += 10;
-        }
+        SceneManager.LoadScene(1);
     }
 }

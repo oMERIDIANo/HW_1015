@@ -23,6 +23,6 @@ public class CameraControl : MonoBehaviour
         float y = Input.GetAxis("Mouse Y");
 
         transform.Rotate(new Vector3(0, x * rotSpeed, 0));
-        lookUpDown.Rotate(new Vector3(y * rotSpeed, 0, 0));
+        lookUpDown.Rotate(new Vector3(-y * rotSpeed, 0, 0));
     }
 }

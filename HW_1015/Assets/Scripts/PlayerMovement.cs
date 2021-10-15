@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -59,13 +60,30 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 Spawn = new Vector3();
 
-        Spawn.x = -1.5f;
-        Spawn.y = 1;
-        Spawn.z = -6;
+        Spawn.x = 0;
+        Spawn.y = 2;
+        Spawn.z = 0;
 
         if (rb.transform.position.y < Kill.y)
         {
             rb.transform.position = Spawn;
+            GameManager.instance.lives -= 1;
+
+            if(GameManager.instance.lives == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+        }
+        
+        else if(GameManager.instance.Health == 0 && GameManager.instance.lives > 0)
+        {
+            GameManager.instance.lives -= 1;
+            GameManager.instance.Health = 50;
+
+            if (GameManager.instance.lives == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
     }
 

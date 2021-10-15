@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Wall
   - Item
+  - Hazard
+  - Boss
   layers:
   - Default
   - TransparentFX
