@@ -49,7 +49,7 @@ public class PlayerShoot : MonoBehaviour
 
             if(GameManager.instance.boss_health == 0 && GameManager.instance.num_of_enemies == 0)
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
             }
         }
     }
